@@ -14,7 +14,7 @@ function SideBar() {
         <hr />
       </div>
       <div className="sidebar__body">
-        <SideBarOption Icon={DashboardIcon} title="DashBoard" url='/top' />
+        <SideBarOption Icon={DashboardIcon} title="DashBoard" url='/' />
         <SideBarOption Icon={PeopleAltIcon} title="Users" url="/user" />
       </div>
     </div>

@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Carbon\Carbon;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,4 +40,24 @@ Route::get('/user', function (Request $request) {
 	
 	return response()->json(['users' => $users]);
 
+});
+
+Route::get('/dashboard', function (Request $request) {
+
+    $data = [];
+    for ($i=0; $i<7; $i++) {
+        $access_num = App\Models\LoginLogs::whereDate('created_at', Carbon::today()->subDay($i))->count();
+        array_push($data, $access_num);
+    };
+    $labels = [
+        date("Y/m/d", strtotime("-6 day")),
+        date("Y/m/d", strtotime("-5 day")),
+        date("Y/m/d", strtotime("-4 day")),
+        date("Y/m/d", strtotime("-3 day")),
+        date("Y/m/d", strtotime("-2 day")),
+        date("Y/m/d", strtotime("-1 day")),
+        date("Y/m/d"),
+    ];
+    
+    return response()->json(['data' => array_reverse($data), 'labels' => $labels]);
 });

@@ -20,7 +20,6 @@ function App() {
           <div className="main__body">
             <Switch>
               <Route path="/" exact component={Top} />
-              <Route path="/about" component={About} />
               <Route path="/user" component={User} />
             </Switch>
           </div>

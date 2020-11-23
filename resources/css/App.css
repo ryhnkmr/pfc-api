@@ -12,6 +12,8 @@
 .main__body {
   background-color: #F5F5F5;
   height: 100%;
+  padding: 20px;
+  overflow: auto;
 }
 
 body {
