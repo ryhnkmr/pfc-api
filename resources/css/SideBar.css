@@ -1,0 +1,16 @@
+.sidebar {
+  color: white;
+  background-color: var(--slack-color);
+  border-top:  1px solid #333D43;
+  max-width: 260px;
+  flex: 30%;
+  padding: 10px;
+}
+
+.sidebar__header {
+  line-height: 60px;
+}
+
+.sidebar__title {
+  padding: 0 10px;
+}

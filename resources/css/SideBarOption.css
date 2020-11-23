@@ -1,0 +1,18 @@
+.sidebaroption__container {
+  display: flex;
+  margin: 10px 0;
+}
+
+.sidebaroption__title {
+  display: inline-block;
+}
+
+.sidebaroption__link {
+  color: gray;
+  transition: color 450ms;
+}
+
+.sidebaroption__link:hover {
+  text-decoration: none;
+  color: white;
+}
