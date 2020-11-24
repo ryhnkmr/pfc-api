@@ -28318,6 +28318,25 @@ exports.push([module.i, ".app__body {\n  display: flex;\n  height: 100vh;\n}\n\n
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/css/DashBoardCard.css":
+/*!*************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/css/DashBoardCard.css ***!
+  \*************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.box {\n  margin-top: 20px;\n  background-color: white;\n  box-shadow: 0 0 2px rgba(0,0,0,.15);\n}\n\n.box-top {\n  height: 100px;\n  padding: 32px 15px;\n  font-size: 40px;\n  line-height: 40px;\n  text-align: center;\n  font-weight: 300;\n}\n\n.box-info {\n  text-align: center;\n  margin: -12px;\n}\n\n.box-info > span {\n  height: 24px;\n  display: inline-block;\n  padding: 4px 10px;\n  text-transform: uppercase;\n  line-height: 14px;\n  background-color: #fff;\n  border: 1px solid rgba(0,0,0,.15);\n  font-size: 12px;\n  color: #636c72;\n  border-radius: 1em;\n}\n\n.box-bottom {\n  padding: 32px 15px;\n  text-align: center;\n  border-top: 1px solid rgba(0,0,0,.15);\n}\n\n.icon {\n  font-size: 50px !important;\n  color: #00bcd4;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/css/MainHeader.css":
 /*!**********************************************************************************************************************!*\
   !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/css/MainHeader.css ***!
@@ -28387,7 +28406,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, ".chart__wrapper {\n  box-shadow: 0 0 2px rgba(0,0,0,.15);\n  background-color: white;\n  padding: 20px;\n}", ""]);
+exports.push([module.i, ".chart__wrapper {\n  box-shadow: 0 0 2px rgba(0,0,0,.15);\n  background-color: white;\n  padding: 20px;\n}\n\n.box {\n  margin-top: 20px;\n  background-color: white;\n  box-shadow: 0 0 2px rgba(0,0,0,.15);\n}\n\n.box-top {\n  height: 100px;\n  padding: 32px 15px;\n  font-size: 40px;\n  line-height: 40px;\n  text-align: center;\n  font-weight: 300;\n}\n\n.box-info {\n  text-align: center;\n  margin: -12px;\n}\n\n.box-info > span {\n  height: 24px;\n  display: inline-block;\n  padding: 4px 10px;\n  text-transform: uppercase;\n  line-height: 14px;\n  background-color: #fff;\n  border: 1px solid rgba(0,0,0,.15);\n  font-size: 12px;\n  color: #636c72;\n  border-radius: 1em;\n}\n\n.box-bottom {\n  padding: 32px 15px;\n  text-align: center;\n  border-top: 1px solid rgba(0,0,0,.15);\n}\n\n.icon {\n  font-size: 50px !important;\n  color: #00bcd4;\n}", ""]);
 
 // exports
 
@@ -123864,6 +123883,36 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./resources/css/DashBoardCard.css":
+/*!*****************************************!*\
+  !*** ./resources/css/DashBoardCard.css ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../node_modules/css-loader??ref--6-1!../../node_modules/postcss-loader/src??ref--6-2!./DashBoardCard.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/css/DashBoardCard.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./resources/css/MainHeader.css":
 /*!**************************************!*\
   !*** ./resources/css/MainHeader.css ***!
@@ -124147,6 +124196,45 @@ if (document.getElementById('app')) {
 
 /***/ }),
 
+/***/ "./resources/js/components/DashBoardCard.js":
+/*!**************************************************!*\
+  !*** ./resources/js/components/DashBoardCard.js ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _css_DashBoardCard_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../css/DashBoardCard.css */ "./resources/css/DashBoardCard.css");
+/* harmony import */ var _css_DashBoardCard_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_DashBoardCard_css__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+function DashBoardCard(_ref) {
+  var Icon = _ref.Icon,
+      cardTitle = _ref.cardTitle,
+      ratio = _ref.ratio;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "box"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "box-top"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, ratio, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "ratio"
+  }, "%"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "box-info"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, cardTitle)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "box-bottom"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Icon, {
+    className: "icon"
+  }))));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (DashBoardCard);
+
+/***/ }),
+
 /***/ "./resources/js/components/MainHeader.js":
 /*!***********************************************!*\
   !*** ./resources/js/components/MainHeader.js ***!
@@ -124281,6 +124369,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _css_Top_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_css_Top_css__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _material_ui_icons_PeopleAlt__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/icons/PeopleAlt */ "./node_modules/@material-ui/icons/PeopleAlt.js");
+/* harmony import */ var _material_ui_icons_PeopleAlt__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_PeopleAlt__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _DashBoardCard__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./DashBoardCard */ "./resources/js/components/DashBoardCard.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -124304,6 +124395,8 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
+
 function Top() {
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])([]),
       _useState2 = _slicedToArray(_useState, 2),
@@ -124317,7 +124410,7 @@ function Top() {
 
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
     getData();
-  });
+  }, []);
 
   var getData = /*#__PURE__*/function () {
     var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
@@ -124371,13 +124464,23 @@ function Top() {
       data: dataFrom
     }]
   };
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "chart__wrapper"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h2", null, "User"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_2__["Line"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h2", null, "New User"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_chartjs_2__WEBPACK_IMPORTED_MODULE_2__["Line"], {
     data: data,
     width: 100,
     height: 50
-  }));
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "card_wrap"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_DashBoardCard__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    Icon: _material_ui_icons_PeopleAlt__WEBPACK_IMPORTED_MODULE_5___default.a,
+    cardTitle: "new user",
+    ratio: "42"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_DashBoardCard__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    Icon: _material_ui_icons_PeopleAlt__WEBPACK_IMPORTED_MODULE_5___default.a,
+    cardTitle: "active user",
+    ratio: "32"
+  })));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Top);
