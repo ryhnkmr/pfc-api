@@ -15,7 +15,7 @@ class AddUserRelatedColunmnToUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             //
-            $table->dateTime('last_logginned_at')->nullable();
+            $table->dateTime('last_loginned_at')->nullable();
         });
     }
 
