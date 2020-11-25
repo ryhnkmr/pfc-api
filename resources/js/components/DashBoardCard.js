@@ -3,7 +3,7 @@ import '../../css/DashBoardCard.css'
 
 function DashBoardCard({Icon, cardTitle, ratio}) {
   return (
-    <div>
+    <div className="box-wrap">
       <div className="box">
         <div className="box-top">
           <span>{ratio}<span className="ratio">%</span></span>

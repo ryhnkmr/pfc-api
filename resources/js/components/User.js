@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import '../../css/User.css'
+import EditIcon from '@material-ui/icons/Edit';
+import DeleteIcon from '@material-ui/icons/Delete';
+import {Link} from 'react-router-dom'
+import { Alarm } from '@material-ui/icons';
+import { keys } from 'lodash';
+
 function User() {
 
     const [users, setUsers] = useState([]);
@@ -12,6 +18,7 @@ function User() {
 
     const getUsers = async () => {
         const response = await axios.get('/api/user');
+        console.log(response.data.users);
         setUsers(response.data.users);
     }
 
@@ -29,10 +36,27 @@ function User() {
       setUsers(filtered_users);
     }
 
+    const confirm = async (userId) => {
+      let res = window.confirm('Are you sure?');
+      console.log('/api/user/'+userId)
+      if( res == true ) {
+        // apiでsoft delete
+        const response = await axios.delete('/api/user/'+userId);
+        alert(response.data.message);
+        getUsers(); 
+      } else {
+        return alert('delete was cancleled')
+      }
+    }
+
+    const test = (userId) => {
+      console.log(userId);
+      alert(userId);
+    }
 
     return (
       <div className="user_info">
-        <h1>Userページ</h1>
+        <h1>User一覧</h1>
         <div className="field is-grouped" style={{alignItems: "center"}}>
           <div className="control">
             <div className="select">
@@ -54,21 +78,25 @@ function User() {
         </div>
         <table className="user_table">
           <tr>
-            <th>id</th>
-            <th>uid</th>
-            <th>email</th>
-            <th>Last Loginned At</th>
-            <th>Created At</th>
+            <th width="5%">id</th>
+            <th width="10%">uid</th>
+            <th width="10%">email</th>
+            <th width="10%">Created At</th>
+            <th width="10%">Last Loginned At</th>
+            <th width="5%"></th>
+            <th width="5%"></th>
           </tr>
             {
               users.map(
                 (user) => 
                 <tr>
-                  <td>{user.id}</td>
-                  <td>{user.name}</td>
-                  <td>test@test.com</td>
-                  <td>2020-12-23</td>
-                  <td>2020-10-22</td>
+                  <td width="5%">{user.id}</td>
+                  <td width="10%">{user.name}</td>
+                  <td width="10%">test@test.com</td>
+                  <td width="10%">2020-12-23</td>
+                  <td width="10%">2020-10-22</td>
+                  <td width="5%"><button ><EditIcon /></button></td>
+                  <td width="5%"><button onClick={()=> confirm(user.id)} key={user.id}><DeleteIcon /></button></td>
                 </tr>
               )
             }

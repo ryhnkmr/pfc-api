@@ -50,10 +50,10 @@ function Top() {
     return (
       <div>
         <div className='chart__wrapper'>
-          <h2>New User</h2>
+          <h2>Access Amount</h2>
           <Line data={data} width={100} height={50} />
         </div>
-        <div className="card_wrap">
+        <div className="card_wrapper">
           <DashBoardCard Icon={ PeopleAltIcon } cardTitle="new user" ratio="42" />
           <DashBoardCard Icon={ PeopleAltIcon } cardTitle="active user" ratio="32" />
         </div>        

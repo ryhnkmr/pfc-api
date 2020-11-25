@@ -1,10 +1,9 @@
 import React from 'react';
 import '../../css/SideBar.css';
 import SideBarOption from './SideBarOption';
-
-
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import PeopleAltIcon from '@material-ui/icons/PeopleAlt';
+import MailIcon from '@material-ui/icons/Mail';
 
 function SideBar() {
   return (
@@ -16,6 +15,7 @@ function SideBar() {
       <div className="sidebar__body">
         <SideBarOption Icon={DashboardIcon} title="DashBoard" url='/' />
         <SideBarOption Icon={PeopleAltIcon} title="Users" url="/user" />
+        <SideBarOption Icon={MailIcon} title="Requests" url="/requests" />
       </div>
     </div>
   )
