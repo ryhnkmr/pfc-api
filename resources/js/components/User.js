@@ -3,14 +3,14 @@ import axios from 'axios';
 import '../../css/User.css'
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
-import {Link} from 'react-router-dom'
-import { Alarm } from '@material-ui/icons';
-import { keys } from 'lodash';
+import CloseIcon from '@material-ui/icons/Close';
+import Modal from 'react-modal';
+Modal.setAppElement("#app");
 
 function User() {
-
     const [users, setUsers] = useState([]);
-    let filtered_users = [];
+    const [modalIsOpen, setIsOpen] = React.useState(false);
+    let filtered_users;
 
     useEffect(() => {
         getUsers();
@@ -49,10 +49,11 @@ function User() {
       }
     }
 
-    const test = (userId) => {
-      console.log(userId);
-      alert(userId);
-    }
+    const modalStyle = {
+      overlay: {
+        zIndex: 2000,
+      },
+    };
 
     return (
       <div className="user_info">
@@ -92,16 +93,20 @@ function User() {
                 <tr>
                   <td width="5%">{user.id}</td>
                   <td width="10%">{user.name}</td>
-                  <td width="10%">test@test.com</td>
-                  <td width="10%">2020-12-23</td>
-                  <td width="10%">2020-10-22</td>
-                  <td width="5%"><button ><EditIcon /></button></td>
-                  <td width="5%"><button onClick={()=> confirm(user.id)} key={user.id}><DeleteIcon /></button></td>
+                  <td width="10%">{user.email}</td>
+                  <td width="10%">{user.created_at}</td>
+                  <td width="10%">{user.last_loginne_at}</td>
+                  <td width="5%"><button onClick={()=> setIsOpen(true)} className="edit_button"><EditIcon /></button></td>
+                  <td width="5%"><button onClick={()=> confirm(user.id)} key={user.id} className='delete_button'><DeleteIcon /></button></td>
                 </tr>
               )
             }
           
         </table>
+        <Modal isOpen={modalIsOpen} style={modalStyle}>
+          <button onClick={() => setIsOpen(false)} className="close_btn"><CloseIcon /></button>
+          <form action=""></form>
+        </Modal>
       </div>
     );
 }

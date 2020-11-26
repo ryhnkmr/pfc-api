@@ -26,3 +26,31 @@ table th,table td{
   box-shadow: 0 0 2px rgba(0,0,0,.15);
   background-color: white;
 }
+
+.edit_button {
+  background: transparent;
+  border: none;
+  color: blue;
+}
+
+.edit_button:hover {
+  background:transparent;
+  color: lightblue;
+}
+
+.delete_button {
+  background: transparent;
+  border: none;
+  color: red;
+}
+
+.delete_button:hover {
+  color: palevioletred;
+}
+
+.close_btn {
+  background:transparent;
+  display: block;
+  margin: 0 0 0 auto;
+  border: none;
+}

@@ -8,6 +8,8 @@ import DashBoardCard from './DashBoardCard';
 function Top() {
     const [dataFrom, setData] = useState([])
     const [labels, setLabels] = useState([])
+    const [activeUsersCount, setActiveUserCount] = useState()
+    const [newUsersCount, setNewUserCount] = useState()
 
     useEffect(()=> {
       getData();
@@ -17,6 +19,8 @@ function Top() {
         const response = await axios.get('api/dashboard');
         setData(response.data.data);
         setLabels(response.data.labels);
+        setActiveUserCount(response.data.active_users)
+        setNewUserCount(response.data.new_users)
     }
 
 
@@ -54,8 +58,8 @@ function Top() {
           <Line data={data} width={100} height={50} />
         </div>
         <div className="card_wrapper">
-          <DashBoardCard Icon={ PeopleAltIcon } cardTitle="new user" ratio="42" />
-          <DashBoardCard Icon={ PeopleAltIcon } cardTitle="active user" ratio="32" />
+          <DashBoardCard Icon={ PeopleAltIcon } cardTitle="new user" count={newUsersCount} />
+          <DashBoardCard Icon={ PeopleAltIcon } cardTitle="active user" count={activeUsersCount} />
         </div>        
       </div>
     );

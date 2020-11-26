@@ -1,12 +1,12 @@
 import React from 'react'
 import '../../css/DashBoardCard.css'
 
-function DashBoardCard({Icon, cardTitle, ratio}) {
+function DashBoardCard({Icon, cardTitle, count}) {
   return (
-    <div className="box-wrap">
+    <div>
       <div className="box">
         <div className="box-top">
-          <span>{ratio}<span className="ratio">%</span></span>
+          <span>{count}<span className="ratio">people</span></span>
         </div> 
         <div className="box-info">
           <span>{cardTitle}</span>

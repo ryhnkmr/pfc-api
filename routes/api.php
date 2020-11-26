@@ -27,10 +27,16 @@ Route::apiResource('user', UserController::class);
 Route::get('/dashboard', function (Request $request) {
 
     $data = [];
+    $new_users_count = 0;
+    $active_users_count = 0;
     for ($i=0; $i<7; $i++) {
         $access_num = App\Models\LoginLogs::whereDate('created_at', Carbon::today()->subDay($i))->count();
         array_push($data, $access_num);
     };
+    
+    $new_users_count = App\Models\User::whereBetween('created_at',[Carbon::today()->subDay(3), Carbon::today()])->count();
+    $active_users_count = App\Models\User::whereDate('last_loginned_at', [Carbon::today()->subDay(3), Carbon::today()])->count(); 
+
     $labels = [
         date("Y/m/d", strtotime("-6 day")),
         date("Y/m/d", strtotime("-5 day")),
@@ -41,7 +47,7 @@ Route::get('/dashboard', function (Request $request) {
         date("Y/m/d"),
     ];
     
-    return response()->json(['data' => array_reverse($data), 'labels' => $labels]);
+    return response()->json(['data' => array_reverse($data), 'labels' => $labels, 'new_users' => $new_users_count, 'active_users' => $active_users_count]);
 });
 
 Route::get('/requests', function (Request $request) {
