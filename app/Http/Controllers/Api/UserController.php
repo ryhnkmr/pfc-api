@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Carbon\Carbon;
 
+ini_set('memory_limit', '512M');
+
 class UserController extends Controller
 {
    function index() {
