@@ -23,9 +23,9 @@ class UserController extends Controller
 
    function store(Request $request) {
     print_r($request);
-    User::create(['uid'=>$request->uid, 'email'=>'test@gmail.com', 'password'=>'password', 'last_loginned_at'=>Carbon::today()]);
+    $user = User::create(['uid'=>$request->uid, 'email'=>$request->email, 'password'=>$request->passoword, 'last_loginned_at'=>Carbon::today(), 'name'=>'test']);
     return response() -> json(['message' => 'successfully created']);
-   }
+  }
 
    function update(Request $request) {
     $user = User::find($request->$id);
