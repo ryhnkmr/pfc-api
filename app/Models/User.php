@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Model;
 
 class User extends Authenticatable
 {
@@ -22,9 +23,17 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'uid',
+        'aim_cal',
+        'aim_fat',
+        'aim_car',
+        'aim_protain',
+        'height',
+        'weight',
+        'last_loginned_at'
     ];
     protected $dates = ['deleted_at'];
-
+ 
     /**
      * The attributes that should be hidden for arrays.
      *
@@ -46,6 +55,11 @@ class User extends Authenticatable
 
     public function login_logs()
     {
-        return $this->hasMany('App\LoginLogs');
+        return $this->hasMany('App\Models\LoginLogs');
+    }
+
+    public function food_record_lists()
+    {
+        return $this->hasMany('App\Models\FoodRecordList');
     }
 }

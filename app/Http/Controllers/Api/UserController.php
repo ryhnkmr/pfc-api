@@ -7,6 +7,7 @@ use App\Http\Controllers\Api\UserController;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Log;
 
 ini_set('memory_limit', '512M');
 
@@ -17,19 +18,38 @@ class UserController extends Controller
     return response()->json(['users' => $users]);
    } 
 
-   function show($id) {
-    return response()->json(['users' =>User::find($id)]);
+   function show(Request $request) {
+     $user = User::where('uid', $request->uid)->first();
+     return response()->json(['user' => $user]);
    }
 
    function store(Request $request) {
-    User::create(['email'=>$request->email, 'password'=>$request->passoword, 'last_loginned_at'=>Carbon::today(), 'name'=>$request->name]);
-    return response() -> json(['message' => 'successfully created']);
+    Log::debug($request->uid);
+    $user = User::where('uid', $request->uid)->first();
+    if ($user) {
+      $message = 'alreadly existed account';
+    } else {
+      $user = User::Create([
+        'uid'=> $request->uid,
+        'email'=>$request->email,
+        'password'=>$request->password,
+        'last_loginned_at'=>Carbon::today(),
+        'name'=>$request->name,
+      ]);
+      $message = 'successfully created';
+    };
+    
+    Log::debug($user);
+    return response() -> json(['message' => $message, 'user'=> $user]);
   }
 
-   function update(Request $request) {
-    $user = User::find($request->$id);
-    $user->fill($request->all());
-    $user->save();
+   function update($id, Request $request) {
+    Log::debug($id);
+    Log::debug($request);
+    $user = User::find($id);
+    $user->fill($request->all())->save();
+
+    return response() -> json(['message' => 'successfully updated', 'user'=> $user]);
    }
 
    function destroy($id) {
@@ -37,5 +57,4 @@ class UserController extends Controller
     $user->delete();
     return response() -> json(['message' => 'successfully deleted']);
    }
-   
 }
