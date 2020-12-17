@@ -16,13 +16,19 @@ class FoodRecordListController extends Controller
     function index($id ,Request $request) {
         $user = User::find($id);
         $records = $user->food_record_lists;
-        return response()->json(['message'=> 'success', 'records' => $records]);
+        $favorite_records = [];
+        foreach ($records as $record) {
+            if ($record['favorite_flg'] == 1) {
+                array_push($favorite_records, $record);
+            }
+        }
+        Log::debug($favorite_records);
+        return response()->json(['message'=> 'success', 'records' => $records, 'favorite_records'=>$favorite_records]);
     }
 
     function store($id, Request $request) {
-        Log::debug('test');
         $user = User::find($id);
-        Log::debug($user);
+        Log::debug($request);
         $record = FoodRecordList::create([
             'user_id'=> $user->id,
             'protain'=> $request->protain,
@@ -31,7 +37,7 @@ class FoodRecordListController extends Controller
             'calorie'=>$request->calorie,
             'quantity'=>$request->quantity,
             'name'=>$request->name,
-            'favorite_flg'=>0,
+            'favorite_flg'=>$request->favorite_flg,
             'recorded_at'=>$request->recorded_at,
         ]);
         return response() -> json(['message' => 'successfully created', 'record'=> $record]);

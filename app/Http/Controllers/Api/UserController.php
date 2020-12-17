@@ -24,7 +24,6 @@ class UserController extends Controller
    }
 
    function store(Request $request) {
-    Log::debug($request->uid);
     $user = User::where('uid', $request->uid)->first();
     if ($user) {
       $message = 'alreadly existed account';
@@ -38,8 +37,6 @@ class UserController extends Controller
       ]);
       $message = 'successfully created';
     };
-    
-    Log::debug($user);
     return response() -> json(['message' => $message, 'user'=> $user]);
   }
 

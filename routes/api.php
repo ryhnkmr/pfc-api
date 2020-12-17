@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use Carbon\Carbon;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\FoodRecordListController;
+use App\Http\Controllers\Api\FoodListController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +20,7 @@ use App\Http\Controllers\Api\FoodRecordListController;
 
 Route::apiResource('user', UserController::class);
 Route::apiResource('user.food_record_list', FoodRecordListController::class);
+Route::apiResource('food_list', FoodListController::class);
 // Route::get('/user', function (Request $request) {
 	
 //     $users = App\Models\User::all();
